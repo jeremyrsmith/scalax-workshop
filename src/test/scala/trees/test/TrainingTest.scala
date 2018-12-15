@@ -27,7 +27,7 @@ class TrainingTest extends FreeSpec {
     val trainingData = balancedData(1000000).toArray
 
     println("Training tree...")
-    val (tree, trainingTime) = time(Learner(8, trainingData))
+    val (tree, trainingTime) = time(Learner(13, trainingData))
     println(s"Trained tree in ${trainingTime.toCoarsest}")
 
     println(s"Generating test data...")
