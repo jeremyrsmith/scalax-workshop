@@ -255,3 +255,32 @@ object FindSplit extends LowPriorityFindSplit {
     }
   }
 }
+
+trait FindSplits[A, Target] {
+  type Out <: HList
+  def apply(): Out
+}
+
+object FindSplits {
+
+  type Aux[A, Target, Out0 <: HList] = FindSplits[A, Target] { type Out = Out0 }
+
+  final case class Instance[A, Target, Out0 <: HList](value: Out0) extends FindSplits[A, Target] {
+    type Out = Out0
+    def apply(): Out = value
+  }
+
+  implicit def hnil[Target]: Aux[HNil, Target, HNil] = Instance(HNil)
+
+  implicit def hcons[H, T <: HList, Target, TOut <: HList](implicit
+    findSplit: FindSplit[H, Target],
+    findSplitsT: FindSplits.Aux[T, Target, TOut]
+  ): Aux[H :: T, Target, FindSplit[H, Target] :: TOut] = Instance(findSplit :: findSplitsT.apply)
+
+  implicit def generic[A <: Product, Target, L <: HList, Out <: HList](implicit
+    gen: Generic.Aux[A, L],
+    findSplitsL: Aux[L, Target, Out]
+  ): Aux[A, Target, Out] = Instance(findSplitsL())
+
+
+}
