@@ -1,0 +1,300 @@
+@netflix-red: #E50914;
+@netflix-gray: #221F1F;
+@netflix-white: #F5F5F1;
+
+html, body, .remark-slide-content {
+    background: @netflix-gray;
+    font-family: "Gotham Book", "Gotham", sans-serif;
+    font-weight: 400;
+    line-height: 1.25;
+    font-size: 24pt;
+    color: white;
+}
+
+.remark-slide-content {
+
+    padding: 36pt 96pt;
+
+    .logo, .symbol {
+        background: transparent no-repeat center center;
+        background-size: contain;
+        margin: 0 auto;
+        .alt { display: none; }
+        display: block;
+    }
+
+    .logo {
+        background-image: url(images/netflix-logo.png);
+        display: block;
+        height: 32pt;
+    }
+
+    .symbol {
+        background-image: url(images/netflix-symbol.png);
+        height: 100pt;
+        width: 55pt;
+    }
+
+    h1 {
+        font-weight: 700;
+        font-family: "Gotham Bold", "Gotham", sans-serif;
+        font-size: 32pt;
+        line-height: 1.1;
+        margin-top: 0;
+    }
+
+    h2 {
+        font-weight: 400;
+        font-family: "Gotham Book", "Gotham", sans-serif;
+        font-size: 26pt;
+        border-left: 0.1em solid @netflix-red;
+        text-align: left;
+        padding: 0 0 0 0.5em;
+    }
+
+    blockquote {
+        border-left: 0.1em solid @netflix-red;
+        text-align: left;
+        padding: 0 0 0 0.5em;
+        font-style: italic;
+        margin-left: 0;
+    }
+
+    h3 {
+        font-weight: 500;
+        font-size: 26pt;
+
+    }
+
+    .middle h1 {
+        font-size: 36pt;
+    }
+
+    .remark-code, .remark-inline-code {
+        font-family: 'Hasklig', 'Menlo', fixed;
+        font-variant-ligatures: discretionary-ligatures;
+    }
+
+
+    .remark-inline-code {
+        padding: 0 !important;
+        display: inline !important;
+        background: transparent !important;
+        -webkit-filter: brightness(120%);
+        -webkit-filter: contrast(120%);
+        /*background: rgba(0, 43, 54, 0.5) !important;*/
+        color: rgb(183, 205, 207);
+    }
+
+
+    a { color: #eaeaea; }
+
+    .footnote {
+      position: absolute;
+      bottom: 3em;
+      font-size: 16pt;
+    }
+
+    .left {
+        float: left;
+    }
+
+    .left.half {
+        width: 49%;
+        float: left;
+    }
+
+    .left.forty {
+        float: left;
+        width: 39%
+    }
+
+    .right {
+        float: right;
+    }
+
+    .left.half .right {
+        width: 49%;
+    }
+
+    .left.forty + .right {
+        width: 59%
+    }
+
+    .clear { clear: both; }
+
+    .remark-inline-code { padding: 0 .2em; }
+
+    .red { color: @netflix-red; }
+
+    .light { font-weight: 300; }
+
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .sym {
+        font-family: serif;
+    }
+
+    .sym.i, .sym .i {
+        font-style: italic;
+    }
+
+    sub { font-size: 60%; }
+
+}
+
+.remark-slide-content.text-table {
+    table {
+        width: 100%;
+        td, th { padding: .25em .5em; }
+        th {
+            text-align: left;
+        }
+    }
+}
+
+.remark-slide-content.two-column-table {
+    table {
+        border-collapse: collapse;
+        td, th { vertical-align: top; }
+        th {
+            border-bottom: 1px solid white;
+            border-collapse: collapse;
+        }
+        th:empty { display: none; }
+        td:first-child, th:first-child {
+            border-right: 1px solid white;
+            white-space: nowrap;
+        }
+    }
+}
+
+.center {
+    text-align: center;
+}
+
+/*
+.remark-slide-content.title {
+    background-image: url(images/netflix-symbol-big.png);
+    background-position: 180% center;
+    background-repeat: no-repeat;
+    padding: 0 2em;
+}
+*/
+
+.remark-slide-content.slightly-smaller {
+    font-size: 22pt;
+}
+
+.remark-slide-content.small-text {
+    font-size: 18pt;
+}
+
+.symbol img {
+    width: 100pt;
+    display: block;
+}
+
+.remark-slide-content.center {
+    h2 {
+        border: none;
+        text-align: center;
+    }
+}
+
+.remark-slide-content.diagram {
+    background: white;
+
+    .diagram {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        p {
+            margin: 0;
+            padding: 0;
+        }
+        img {
+            height: 100%;
+        }
+    }
+}
+
+.small-content {
+    font-size: 20pt;
+}
+
+.smaller-content {
+    font-size: 18pt;
+}
+
+.tiny-code .remark-code {
+    font-size: 9pt;
+}
+.small-code {
+    .remark-code {
+        font-size: 12pt;
+    }
+
+    pre {
+        margin-top: 0;
+    }
+}
+
+.smallish-code {
+    .remark-code {
+        font-size: 14pt;
+    }
+}
+
+.biggish-code .remark-code {
+    font-size: 18pt;
+}
+
+.remark-code {
+    font-size: 19pt;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+
+    ul {
+        margin: .25em 0 0 1em;
+    }
+}
+
+li {
+    margin: 0;
+    padding-bottom: .25em;
+}
+
+.center {
+    text-align: center;
+}
+
+.magrit {
+    font-family: 'Satisfy', cursive;
+}
+
+.social {
+    padding: .5em 0;
+    display: block;
+    vertical-align: middle;
+    img {
+        display: inline;
+        vertical-align: middle;
+        width: 1.5em;
+        margin-right: .5em;
+    }
+
+    a {
+        text-decoration: none;
+        font-weight: bold;
+    }
+}

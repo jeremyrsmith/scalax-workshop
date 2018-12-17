@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Type-Oriented Programming</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+  <link rel="stylesheet/less" type="text/css" href="style.less" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
+  <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+  <script>
+        var options = {sourceUrl: 'slides.md', ratio: '16:9', highlightStyle: 'solarized-dark', highlightLanguage: 'scala', highlightSpans: true};
+        var renderMath = function() {
+            renderMathInElement(document.body);
+        };
+
+        var slideshow = remark.create(options, renderMath);
+        setTimeout(function () {
+          document.getElementsByClassName('remark-inline-code').map(function(block) {
+              remark.highlighter.engine.highlightBlock(block);
+          });
+         }, 100);
+      </script>
+  </body>
+</html>
